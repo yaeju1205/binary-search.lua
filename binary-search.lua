@@ -15,7 +15,6 @@ local default_options = {
 --- @param t table<T, U>
 --- @return table<T, U>
 local function deep_copy(t)
-    if type(t) ~= 'table' then return t end
     local res = {}
     for k, v in pairs(t) do
         res[deep_copy(k)] = deep_copy(v)
